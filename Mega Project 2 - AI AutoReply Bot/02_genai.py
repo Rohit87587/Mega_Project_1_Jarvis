@@ -1,7 +1,10 @@
 import google.generativeai as genai
+from dotenv import load_env()
+
+load_env()
 
 # Configure Gemini API
-genai.configure(api_key="AIzaSyAZu8fEj_vE-oVQueMpF9pQRg0YlJxACQg")
+genai.configure(api_key="os.getenv("Gemini_api_key")")
 
 command = """[11:42 am, 21/11/2025] F Siddharth Vvp: Shu message delete Kari nakhe che
 [11:43 am, 21/11/2025] RD UBHADIYA: Are chat bot banavto to pan taro reply na aayo to delete kari didhi😂
@@ -30,3 +33,4 @@ model = genai.GenerativeModel("gemini-1.5-flash")
 response = model.generate_content(prompt)
 
 print(response.text)
+
